@@ -36,7 +36,6 @@ export async function rentalUpV(req, res, next) {
         const gamePrice = rental.rows[0].originalPrice / rental.rows[0].daysRented
         const delayFee = gamePrice * delayfee;
 
-
         data = {
             id: req.params.id,
             returnDate: currentDay,
