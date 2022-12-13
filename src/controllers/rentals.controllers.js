@@ -1,7 +1,7 @@
 import { connection } from "../database-/database.js";
 
 export async function rentals(req, res) {
-  const { customerId, gameId, rentDate, daysRented, returnDate, originalPrice, delayFee} = res.locals;
+  const { customerId, gameId, rentDate, daysRented, returnDate, originalPrice, delayFee } = res.locals;
 
   try {
     await connection.query(
@@ -10,7 +10,7 @@ export async function rentals(req, res) {
       [customerId, gameId, rentDate, daysRented, returnDate, originalPrice, delayFee]
     );
     return res.sendStatus(201);
-    
+
   } catch (err) {
     return res.status(500).send(`erro: ${err.message}`);
   }

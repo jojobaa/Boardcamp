@@ -9,7 +9,7 @@ export async function rentalsDelete(req, res) {
             [id]
         );
         return res.sendStatus(200);
-        
+
     } catch (err) {
         return res.status(500).send(err.message);
     }

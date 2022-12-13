@@ -1,7 +1,7 @@
 import { connection } from "../database-/database.js";
 
 export async function rentalUp(req, res) {
-  const {id, returnDate, delayFee} = res.locals;
+  const { id, returnDate, delayFee } = res.locals;
 
   try {
     await connection.query(
@@ -9,7 +9,7 @@ export async function rentalUp(req, res) {
       [returnDate, delayFee, id]
     );
     return res.sendStatus(200);
-    
+
   } catch (err) {
     return res.status(500).send(err.message);
   }

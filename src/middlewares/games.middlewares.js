@@ -1,6 +1,6 @@
 import { connection } from "../database-/database.js";
 import { gamesSchema } from "../models/games.models.js";
-
+//
 export async function games(req, res, next) {
     const { name, image, stockTotal, pricePerDay, categoryId } = req.body;
     const { error } = gamesSchema.validate(req.body, { abortEarly: false });
@@ -27,7 +27,7 @@ export async function games(req, res, next) {
             "SELECT * FROM games WHERE name = $1::text",
             [name]
         );
-        
+
         if (gamesName.rowCount > 0) {
             return res.sendStatus(409);
         }

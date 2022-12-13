@@ -26,7 +26,7 @@ export async function customerV(req, res, next) {
       const errors = error.details.map((detail) => detail.message);
       return res.status(400).send(errors);
     }
-    
+
   } catch (err) {
     return res.status(500).send(`erro: ${err.message}`);
   }

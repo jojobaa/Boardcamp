@@ -1,7 +1,7 @@
 import { connection } from "../database-/database.js";
 
 export async function customer(req, res) {
-  const { name, phone, cpf, birthday} = res.locals;
+  const { name, phone, cpf, birthday } = res.locals;
 
   try {
     await connection.query(
